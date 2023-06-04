@@ -1,0 +1,145 @@
+% The thesis class has all the usual options that 'book' has
+% Extra options:
+% - singlespacing, onehalfspacing, doublespacing = line spacing
+\documentclass{thesis}
+
+% Setup title page
+\title{Title Thesis}
+\subtitle{Optional subtitle}
+\author{Author Name}
+\department{Department}
+\institution{University of Somewhere}
+\documenttype{\forthedegreeof{Doctor of Philosophy}}
+%\date{}  % Defaults to \today
+
+% Optionally include a crest or logo on the title page
+\renewcommand{\maketitlecrest}{%
+    \includegraphics[height=4cm]{example_crest} 
+}
+% The example crest was produced by Ali Muksin,
+% and is used under the Free License from vecteezy.com
+% https://www.vecteezy.com/vector-art/7944555-education-logo-design-vector-template
+
+
+% These commands control different formatting options
+% To modify the formatting, redefine them with:
+%   \renewcommand{\commandname}{...}
+
+% - \headingfont    Formatting for all headings
+% - \partfont
+% - \chapterfont
+% - \sectionfont
+% - \subsectionfont
+% - \subsubsectionfont
+% - \paragraphfont
+% - \subparagraphfont
+
+% - \quotefont      Formatting of quote, quotation, etc...
+% - \quotespacing   Line spacing for quote, etc...
+
+
+% The thesis class does NOT import any bibliography packages,
+% this must be done manually
+% Adjust the package options accordingly
+\usepackage[backend=biber,
+            sorting=none,
+            hyperref=true,
+            citestyle=chem-acs,
+            bibstyle=nature]{biblatex}
+\renewcommand{\cite}[1]{\supercite{#1}}
+\renewcommand*{\bibsetup}{\singlespacing}
+%\addbibresource{refences}
+
+
+% Used to generate filler text - delete this when using the template
+\usepackage{lipsum}
+
+
+\begin{document}
+
+\frontmatter
+
+ % Different formatting of the title page is possible with, e.g:
+ % {\sffamily \maketitle \cleardoublepage}
+\maketitle \cleardoublepage
+
+\begin{abstract}
+    \lipsum[1]
+\end{abstract}
+
+\begin{dedication}
+    Thank you to the author of this thesis template
+\end{dedication}
+
+% \begin[Custom Name]{acknowledgements} to set 'Custom Name' as the title
+\begin{acknowledgements}
+    \lipsum[2]
+\end{acknowledgements}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\chapter{Introduction}
+\lipsum[3-8]
+
+
+\mainmatter
+
+\chapter{The First Chapter} \label{chap:first_chapter}
+\lipsum[9-11]
+\section{Section}
+\lipsum[12]
+
+% The thesis class should have loaded the following packages:
+% amsmath, amsfonts, amssymb, physics
+\begin{equation} \label{eq:an_equation}
+    a^2 = \vec{x} \cdot \vec{y} .
+\end{equation}
+
+\lipsum[13]
+\subsection{Subsection}
+\lipsum[14]
+\subsubsection{Subsubsection}
+\lipsum[15]
+\paragraph{Paragraph} 
+\lipsum[16][1-5]
+\subparagraph{Subparagraph} 
+\lipsum[17][1-5]
+
+
+\chapter{All About Referencing}
+
+The thesis class loads the package \texttt{cleveref}, which makes referencing easy. For example, the previous chapter was \cref{chap:first_chapter}, which included \eqref{eq:an_equation}. \Cref{chap:first_chapter} can be used for references at the start of a sentence.
+
+
+\chapter{}
+
+The template also works if no chapter name is provided.
+
+
+% If you want the backmatter BEFORE any appendices, include this:
+{
+\backmatter
+\chapter{Conclusions}
+\lipsum[22-26]
+\printbibliography[heading=bibintoc,title={References}]
+}
+% This disables chapter numbering for the backmatter, 
+% but enables it again for the appendicees
+
+
+% Optional appendix
+\appendix
+\chapter{The First Appendix}
+\lipsum[18]
+\section{Section of the appendix}
+\lipsum[19-21]
+
+% If you want the backmatter AFTER any appendices, include this:
+%\backmatter
+%\chapter{Conclusions}
+%\lipsum[22-26]
+%\printbibliography[heading=bibintoc,title={References}]
+
+\end{document}
