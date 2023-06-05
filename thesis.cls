@@ -1,3 +1,21 @@
+% Not Another Thesis Template - A LaTeX template for a thesis/dissertation.
+% Copyright (C) 2023 Theo Fletcher
+
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+
+% You should have received a copy of the GNU General Public License
+% along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+
 % TODO: Formatting for mathematical environments
 % - Theorem, corrolary, lemma, etc
 
@@ -136,7 +154,7 @@
     \markright{\MakeTextUppercase{\thesection\quad #1}}%
 }
 
-% TODO: producing warnings when using onesided mode, 
+% TODO: producing warnings when using onesided mode,
 %       need some kind of toggle here for onesided and twosided options
 \fancypagestyle{fancy}{%
     \fancyhf{}
@@ -144,7 +162,7 @@
         \fancyhead[LO]{\footnotesize\rightmark}
         \fancyhead[RO]{\thepage}
         \fancyhead[LE]{\thepage}
-        \fancyhead[RE]{\footnotesize\leftmark}    
+        \fancyhead[RE]{\footnotesize\leftmark}
     \else
         \fancyhead[L]{\footnotesize\rightmark}
         \fancyhead[R]{\thepage}
@@ -164,7 +182,7 @@
 % Redefine cleardoublepage such that, if it creates an extra page, it is empty
 \let\@oldcleardoublepage\cleardoublepage
 \renewcommand{\cleardoublepage}{%
-    \clearpage\thispagestyle{empty}\@oldcleardoublepage 
+    \clearpage\thispagestyle{empty}\@oldcleardoublepage
 }
 
 \pagestyle{fancy}
@@ -285,20 +303,20 @@
         \maketitlecrest
 
         \vspace{100pt}
-        
+
         {\LARGE \@title}  \leavevmode\\[0.5\baselineskip]
         {\large \@subtitle}  \leavevmode\\[50pt]
         \vfill
-        
+
         {\Large \textsc \@author}  \leavevmode\\[0.5\baselineskip]
         {\@department}  \leavevmode\\
-        {\@institution} 
+        {\@institution}
         \vfill
-        
+
         {\@documenttype}  \leavevmode\\[\baselineskip]
         {\large \bfseries \@date}
         \vfill
-    
+
     \end{center}
     \clearpage
     \let\maketitle\relax%
@@ -360,7 +378,7 @@
     \normalfont
 }{%
     % blank line to put date on a new line
-    
+
     {\hfill \textsl \@date}
     \end{quotation}
     \vfill
