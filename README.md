@@ -21,7 +21,7 @@ Simple and extensive options for modifying the look of your document, so you can
 
 ## Examples
 
-*Examples coming soon...*
+[Default Style](examples/default.pdf) - [Example 1](examples/oxford.pdf) - [Example 2](examples/cambridge.pdf) - [Example 3](examples/princeton.pdf)
 
 If you use Not Another Thesis Template, or make a specialised version to meet your specific university guidelines, please get in touch and share it!
 
